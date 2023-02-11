@@ -1,0 +1,2 @@
+openai==0.26.5
+prompt-toolkit==3.0.36
