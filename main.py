@@ -1,5 +1,6 @@
 import os
 import openai
+import platform
 
 from prompt_toolkit import PromptSession
 from prompt_toolkit.completion import Completer, Completion
@@ -12,7 +13,7 @@ class GPTCompleter(Completer):
 
         response = openai.Completion.create(
             engine="text-davinci-002",
-            prompt=f"Give me shortest mac bash that will {document.text}. Only code. Separate multiple commands with &",
+            prompt=f"Give me shortest {platform.system()} bash that will {document.text}. Only code. Separate multiple commands with &",
             max_tokens=1024,
             n=3,
             stop=None,
