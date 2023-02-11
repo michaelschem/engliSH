@@ -1,6 +1,4 @@
 import os
-import asyncio
-import time
 import openai
 
 from prompt_toolkit import PromptSession
@@ -22,7 +20,6 @@ class GPTCompleter(Completer):
         )
         options = set([choice["text"].replace('\n', '') for choice in response["choices"]])
         options = [Completion(option, start_position=-len(document.text)) for option in options]
-        # yield Completion('completion3', start_position=-5)
         return options
 
 while True:
