@@ -12,7 +12,7 @@ class GPTCompleter(Completer):
 
         response = openai.Completion.create(
             engine="text-davinci-002",
-            prompt=f"Give me some mac bash that will {document.text}. Only provide the code, not the prompt.",
+            prompt=f"Give me shortest mac bash that will {document.text}. Only code. Separate multiple commands with &",
             max_tokens=1024,
             n=3,
             stop=None,
